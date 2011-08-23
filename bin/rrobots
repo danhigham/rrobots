@@ -134,9 +134,9 @@ def setup_battlefield(options, robots)
     c += 1
     robotrunner = RobotRunner.new(Object.const_get(in_game_name).new, battlefield, team)
     battlefield << robotrunner
-    # rescue Exception => error
-    #   puts 'Error loading ' + robot + '!'
-    #   warn error
+    rescue Exception => error
+      puts 'Error loading ' + robot + '!'
+      warn error
     end
     in_game_name
   end
